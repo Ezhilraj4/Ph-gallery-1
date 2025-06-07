@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PH Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 2rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+      background: #ffffff44;
+      border-radius: 10px;
+    }
+
+    .gallery img {
+      height: 300px;
+      border-radius: 15px;
+      scroll-snap-align: center;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        height: 200px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PH Gallery</h1>
+    <p>Your Visual World</p>
+  </header>
+
+  <section class="gallery">
+    <img src="https://source.unsplash.com/random/800x600?sig=1" alt="Photo 1">
+    <img src="https://source.unsplash.com/random/800x600?sig=2" alt="Photo 2">
+    <img src="https://source.unsplash.com/random/800x600?sig=3" alt="Photo 3">
+    <img src="https://source.unsplash.com/random/800x600?sig=4" alt="Photo 4">
+    <img src="https://source.unsplash.com/random/800x600?sig=5" alt="Photo 5">
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PH Gallery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
